@@ -17,7 +17,7 @@ function App() {
   const toggleMode = () => {
     setDarkMode(prev => !prev);
   }
-  console.log(darkMode)
+  // console.log(darkMode)
 
   const ref = useRef(true)
   useEffect(() => {
@@ -35,7 +35,7 @@ function App() {
   async function fetch() {
     // const response = await fetch('https://restcountries.com/v2/all')
     const response = await axios.get('https://restcountries.com/v2/all')
-    console.log(response)
+    // console.log(response)
     setCountries(response.data)
 }
   

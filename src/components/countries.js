@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import axios from 'axios';
@@ -13,7 +13,7 @@ const Countries = ({countries, setCountries, fetch}) => {
     
 
     const navigate = useNavigate();
-    const [ search, setSearch ] = useState('');
+    // const [ search, setSearch ] = useState('');
     // const ref = useRef(true)
     const refInput = useRef()
     const filterInput = useRef();
@@ -23,38 +23,37 @@ const Countries = ({countries, setCountries, fetch}) => {
         navigate(`${code}/details`)
     }
     
-    const searchCountries = (event) => {
-        try {
-            console.log(event.target.value)
-            setSearch(event.target.value);
+    // const searchCountries = (event) => {
+    //     try {
+    //         console.log(event.target.value)
+    //         setSearch(event.target.value);
 
-            if(search.trim()) {
-                const sear = async () => {
-                    await axios.get(`https://restcountries.com/v2/name/${search}`)
-                    // setCountries(response.data)
-                    .then(res => {
-                        console.log(res)
-                        setCountries(res.data)
-                    })
-                    .catch(e => {
-                        console.log('errorrorr')
-                        console.log(e)
-                        setCountries([e.response.data])
-                    })
-                }
-                // console.log(ref)
-                sear();
-                // ref.current = false
-            } else {
-                fetch()
-            }
-        } catch (err) {
-            throw err
-            // console.log(err)
-        }
-    }
-    console.log(search);
-    console.log(countries);
+    //         if(search.trim()) {
+    //             const sear = async () => {
+    //                 await axios.get(`https://restcountries.com/v2/name/${search}`)
+    //                 // setCountries(response.data)
+    //                 .then(res => {
+    //                     console.log(res)
+    //                     setCountries(res.data)
+    //                 })
+    //                 .catch(e => {
+    //                     console.log('errorrorr')
+    //                     console.log(e)
+    //                     setCountries([e.response.data])
+    //                 })
+    //             }
+    //             // console.log(ref)
+    //             sear();
+    //             // ref.current = false
+    //         } else {
+    //             fetch()
+    //         }
+    //     } catch (err) {
+    //         throw err
+    //         // console.log(err)
+    //     }
+    // }
+    
 
     const SC = () => {
         try {
@@ -64,12 +63,9 @@ const Countries = ({countries, setCountries, fetch}) => {
                 const sear = async () => {
                     await axios.get(`https://restcountries.com/v2/name/${searchValue}`)
                     .then(res => {
-                        console.log(res)
                         setCountries(res.data)
                     })
                     .catch(e => {
-                        console.log('errorrorr')
-                        console.log(e)
                         setCountries([e.response.data])
                     })
                     // setCountries(response.data)
@@ -132,14 +128,14 @@ const Countries = ({countries, setCountries, fetch}) => {
         }
     }
     
-    console.log(countries);
+    // console.log(countries);
     return (
         <div>
             <div className='filter'>
                 {/* <input type='text' ref={refInput} onChange={SC}/> */}
                 <div className='search'>
                     <InputGroup className="mb-3 input">
-                        <InputGroup.Text id="basic-addon1" size="sm">@</InputGroup.Text>
+                        <InputGroup.Text id="basic-addon1" size="sm">Q</InputGroup.Text>
                             <Form.Control
                                 placeholder="Search"
                                 aria-label="Search"
@@ -168,7 +164,8 @@ const Countries = ({countries, setCountries, fetch}) => {
                 {countries.length === 0  ? 
                     <div>Not Available</div> : 
                     countries[0].message ? 
-                        <div>{countries[0].message}</div> : (
+                        <div>{countries[0].message}</div> : 
+                        (
                             countries.map(country => (
                                 <CountryCard 
                                 key={country.alpha3Code}
@@ -180,7 +177,8 @@ const Countries = ({countries, setCountries, fetch}) => {
                                 show={() => show(country.alpha3Code)}
                                 />
                             )
-                ))}
+                        )
+                )}
             </div> 
         </div>
         

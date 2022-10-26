@@ -5,7 +5,7 @@
 
 .darkMode {
   background-color: rgba(3, 41, 49, 0.966);
-  color: whitesmoke;
+  /* color: whitesmoke; */
 }
 
 .header {
@@ -19,7 +19,7 @@
 }
 
 .header.darkMode {
-  background-color: rgba(3, 41, 49, 0.966);
+  background-color: rgba(2, 29, 34, 0.966);
   color: whitesmoke;
 }
 

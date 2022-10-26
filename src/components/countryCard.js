@@ -1,4 +1,4 @@
-import { Card, Button } from 'react-bootstrap' 
+import { Card } from 'react-bootstrap' 
 
 
 
@@ -8,7 +8,7 @@ const CountryCard = ({name,capital,flag,region,population,show}) => {
             <Card style={{ width: '18rem' }}>
                 <div className='flag'><Card.Img variant="top" src={flag} /></div>
                 <Card.Body>
-                    <Card.Title>{name}</Card.Title>
+                    <Card.Title className='mb-3'>{name}</Card.Title>
                     <Card.Text>
                         <p>Population: <span className='value'>{population}</span> </p> 
                         <p>Region: <span className='value'>{region}</span></p> 

@@ -80,8 +80,12 @@
 
 }
 
-.border {
-    display: inline-flex;
+.info span {
+    color: gray
+}
+
+.borders {
+    display: flex;
     gap: 35px;
     align-items: center;
     justify-content: space-around;

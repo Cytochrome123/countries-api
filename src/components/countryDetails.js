@@ -16,7 +16,7 @@ const CountryDetails = ({countries}) => {
     let latlng;
     let timezones;
 
-    {countries.forEach(country => {
+    countries.forEach(country => {
         if (country.alpha3Code === code) {
             name = country.name;
             nativeName = country.nativeName;
@@ -31,7 +31,7 @@ const CountryDetails = ({countries}) => {
             latlng = country.latlng;
             timezones = country.timezones;
         }
-    })};
+    });
 
 
     return (
@@ -42,33 +42,32 @@ const CountryDetails = ({countries}) => {
                 </div>
                 <div className="info-detail">
                     <div className="name">
-                        <h2>{`${name} (${timezones})`}</h2>
+                        <h2 className="mb-3">{`${name} (${timezones})`}</h2>
                     </div>
                     
                     <div className="info">
                         <div className="info-left">
                             <p>Native Name: <span>{nativeName}</span></p>
-                            <p>{capital}</p>
-                            <p>{region}</p>
-                            <p>{subregion}</p>
-                            <p>{subregion}</p>
+                            <p>Capital: <span>{capital}</span> </p>
+                            <p>Region: <span>{region}</span> </p>
+                            <p>Sub-region: <span>{subregion}</span></p>
                         </div>
                         <div className="info-right">
-                            <p>{population}</p>
+                            <p>Population: <span>{population}</span></p>
                             {currencies.map(currency => (
-                                <p>{`${currency.name} - ${currency.code} (${currency.symbol})`}</p>
+                                <p>Currency: <span>{`${currency.name} - ${currency.code} (${currency.symbol})`}</span></p>
                             ))}
                             {languages.map(language => (
-                                <p>{`${language.name} - ${language.nativeName} (${language.iso639_1})`}</p>
+                                <p>Language: <span>{`${language.name} - ${language.nativeName} (${language.iso639_1})`}</span></p>
                             ))}
-                            <p>{latlng}</p>
+                            <p>Lat&Lng: <span>{latlng}</span></p>
                         </div>
                     </div>
 
-                    <h4>Borders</h4>
-                    <div className="border">
+                    <h4 className="mt-3">Borders</h4>
+                    <div className="borders">
                         {borders.map(border => (
-                            <p>{border}</p>
+                            <p className="mt-3">{border}</p>
                         ))}
                     </div>
                 </div>
