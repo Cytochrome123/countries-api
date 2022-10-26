@@ -1,0 +1,88 @@
+.filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: auto 50px;
+}
+
+.search {
+    width: 300px;
+}
+
+.input-group {
+    background-color: transparent;
+    outline: red;
+}
+
+.region {
+    width: 300px;
+}
+.countries {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 35px;
+    max-width: 1400px;
+}
+
+.country-card {
+    width: 305px;
+    height: 370px;
+    cursor: pointer;
+}
+
+.flag {
+    height: 190px;
+    width: 100%;
+}
+
+.flag img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.value {
+    color: gray;
+}
+
+.details {
+    max-width: 1000px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin: 15px auto 0;
+    padding: 15px;
+}
+
+.img-detail {
+    flex: 0.5;
+}
+
+.img-detail img {
+    width: 100%;
+    /* object-fit: cover; */
+}
+
+.info-detail {
+    flex: 0.5;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.border {
+    display: inline-flex;
+    gap: 35px;
+    align-items: center;
+    justify-content: space-around;
+}
