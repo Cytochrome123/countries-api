@@ -131,11 +131,11 @@ const Countries = ({countries, setCountries, fetch}) => {
     // console.log(countries);
     return (
         <div>
-            <div className='filter'>
+            <div className='filter mb-5'>
                 {/* <input type='text' ref={refInput} onChange={SC}/> */}
                 <div className='search'>
-                    <InputGroup className="mb-3 input">
-                        <InputGroup.Text id="basic-addon1" size="sm">Q</InputGroup.Text>
+                    <InputGroup className="input" size="sm">
+                        <InputGroup.Text id="basic-addon1" >Q</InputGroup.Text>
                             <Form.Control
                                 placeholder="Search"
                                 aria-label="Search"
