@@ -34,10 +34,12 @@ function App() {
 
   async function fetch() {
     // const response = await fetch('https://restcountries.com/v2/all')
-    const response = await axios.get('https://restcountries.com/v2/all')
-    // console.log(response)
-    setCountries(response.data)
-}
+    // const response = await axios.get('https://restcountries.com/v2/all')
+    const response = await axios.get('https://kontries.herokuapp.com/api/')
+    console.log(response)
+    // setCountries(response.data)
+    setCountries(response.data.countries)
+  };
   
   return (
     <div className={`App ${darkMode ? 'darkMode' : ''}`}>

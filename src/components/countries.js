@@ -61,12 +61,16 @@ const Countries = ({countries, setCountries, fetch}) => {
             if (searchValue) {
                 console.log(searchValue)
                 const sear = async () => {
-                    await axios.get(`https://restcountries.com/v2/name/${searchValue}`)
+                    // await axios.get(`https://restcountries.com/v2/name/${searchValue}`)
+                    await axios.get(`https://kontries.herokuapp.com/api/name/${searchValue}`)
                     .then(res => {
-                        setCountries(res.data)
+                        console.log(res)
+                        // setCountries(res.data)
+                        setCountries(res.data.country)
                     })
                     .catch(e => {
-                        setCountries([e.response.data])
+                        // setCountries([e.response.data])
+                        setCountries([e.response.data.country])
                     })
                     // setCountries(response.data)
                 }
