@@ -35,7 +35,14 @@ function App() {
   async function fetch() {
     // const response = await fetch('https://restcountries.com/v2/all')
     // const response = await axios.get('https://restcountries.com/v2/all')
-    const response = await axios.get('https://kontries.herokuapp.com/api/')
+    // const response = await axios.get('https://kontries.herokuapp.com/api/')
+    const response = axios({
+      method: 'get',
+      url: 'https://kontries.herokuapp.com/api/',
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    })
     console.log(response)
     // setCountries(response.data)
     setCountries(response.data.countries)
