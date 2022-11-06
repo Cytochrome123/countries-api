@@ -36,6 +36,7 @@ function App() {
     axios({
       method: 'get',
       url: 'https://kontries.herokuapp.com/api/',
+      crossDomain: true, 
       headers: {
         'Content-Type': 'application/json',
       }
@@ -48,8 +49,6 @@ function App() {
     .catch(err => {
       throw err;
     })
-    // const response = await fetch('https://restcountries.com/v2/all')
-    // const response = await axios.get('https://restcountries.com/v2/all')
     // const response = await axios.get('https://kontries.herokuapp.com/api/')
     // const response = axios({
     //   method: 'get',
