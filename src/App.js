@@ -35,8 +35,8 @@ function App() {
   async function fetch() {
     axios({
       method: 'get',
-      // url: 'https://kontries.herokuapp.com/api/',
-      url: 'http://localhost:8080/api',
+      url: 'https://kontries.herokuapp.com/api/',
+      // url: 'http://localhost:8080/api',
       crossDomain: true, 
       headers: {
         'Content-Type': 'application/json',
